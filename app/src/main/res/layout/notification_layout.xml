@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background">
+
+    <SeekBar
+        android:id="@+id/notification_seekbar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/notification_previous_BT"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?actionBarItemBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/notification_playpause_BT"
+        app:layout_constraintEnd_toStartOf="@+id/notification_playpause_BT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/notification_playpause_BT"
+        app:srcCompat="@android:drawable/ic_media_previous" />
+
+    <ImageButton
+        android:id="@+id/notification_playpause_BT"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="?actionBarItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notification_seekbar"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/notification_next_BT"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?actionBarItemBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/notification_playpause_BT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/notification_playpause_BT"
+        app:layout_constraintTop_toTopOf="@+id/notification_playpause_BT"
+        app:srcCompat="@android:drawable/ic_media_next" />
+
+    <ImageView
+        android:id="@+id/notification_thumb_IV"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/notification_seekbar"
+        app:layout_constraintStart_toStartOf="@+id/notification_seekbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nothumb" />
+
+    <TextView
+        android:id="@+id/notification_songname_TV"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:hint="Song Name"
+        android:marqueeRepeatLimit="marquee_forever"
+        app:layout_constraintBottom_toBottomOf="@+id/notification_thumb_IV"
+        app:layout_constraintEnd_toStartOf="@+id/notification_liked_BT"
+        app:layout_constraintStart_toEndOf="@+id/notification_thumb_IV"
+        app:layout_constraintTop_toTopOf="@+id/notification_thumb_IV" />
+
+    <TextView
+        android:id="@+id/notification_currenttime_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        app:layout_constraintStart_toStartOf="@+id/notification_seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/notification_seekbar" />
+
+    <TextView
+        android:id="@+id/notification_fulltime_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        app:layout_constraintEnd_toEndOf="@+id/notification_seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/notification_seekbar" />
+
+    <ImageButton
+        android:id="@+id/notification_liked_BT"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="?actionBarItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/notification_seekbar"
+        app:layout_constraintEnd_toEndOf="@+id/notification_seekbar"
+        app:srcCompat="@drawable/ic_not_liked" />
+</androidx.constraintlayout.widget.ConstraintLayout>

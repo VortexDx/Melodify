@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playlist_tile_constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <ImageView
+        android:id="@+id/playlist_imageView"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/nothumb" />
+
+    <TextView
+        android:id="@+id/playlistname"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:text="TextView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/playlist_imageView"
+        app:layout_constraintStart_toEndOf="@+id/playlist_imageView"
+        app:layout_constraintTop_toTopOf="@+id/playlist_imageView"
+        app:layout_constraintVertical_bias="0.507" />
+
+    <ImageButton
+        android:id="@+id/playlist_menuBT"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="10dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/playlistname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playlistname"
+        app:layout_constraintVertical_bias="0.517"
+        app:srcCompat="@drawable/ic_playlist_popup" />
+</androidx.constraintlayout.widget.ConstraintLayout>

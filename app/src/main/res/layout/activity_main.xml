@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+    <!--    android:background="?android:attr/colorPressedHighlight">-->
+
+    <!--    android:background="@color/purple_200">-->
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="291dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_songName" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:srcCompat="@drawable/ic_play_circle" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="30dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:srcCompat="@android:drawable/ic_media_next" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="30dp"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:srcCompat="@android:drawable/ic_media_previous" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:gravity="left"
+        android:text="00:00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:gravity="right"
+        android:text="00:00"
+        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/Playlists"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="30dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="center"
+        android:src="@drawable/ic_playlist"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+    <ImageButton
+        android:id="@+id/ib_refresh"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="33dp"
+        android:background="?android:selectableItemBackground"
+        android:src="@android:drawable/stat_notify_sync"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_songName"
+        android:layout_width="291dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/circular_IV" />
+
+    <ImageButton
+        android:id="@+id/mainactivity_liked_IB"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:srcCompat="@drawable/ic_not_liked" />
+
+    <ImageButton
+        android:id="@+id/mainactivity_repeat_IB"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="30dp"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:srcCompat="@drawable/ic_repeat" />
+
+    <ImageButton
+        android:id="@+id/mainactivity_shuffle_IB"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="?android:selectableItemBackground"
+        app:civ_border_color="#2BB4C5"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:srcCompat="@drawable/ic_shuffle" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/circular_IV"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="136dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nothumb" />
+
+    <com.gauravk.audiovisualizer.visualizer.CircleLineVisualizer
+        android:id="@+id/visualiser"
+        android:layout_width="385dp"
+        android:layout_height="385dp"
+        app:avDensity="0.5"
+        app:avSpeed="normal"
+        app:avType="fill"
+        app:layout_constraintBottom_toBottomOf="@+id/circular_IV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/circular_IV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
