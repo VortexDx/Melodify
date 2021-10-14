@@ -179,11 +179,11 @@ public class MainActivity extends AppCompatActivity {
             currentSongName = songsInPlaylist.get(index);
             if(dbh.checkLiked(songsInPlaylist.get(index))){
                 likedBT.setImageResource(R.drawable.ic_liked);
-                notification_liked.setImageResource(R.drawable.ic_liked);
+                //notification_liked.setImageResource(R.drawable.ic_liked);
             }
             else{
                 likedBT.setImageResource(R.drawable.ic_not_liked);
-                notification_liked.setImageResource(R.drawable.ic_not_liked);
+                //notification_liked.setImageResource(R.drawable.ic_not_liked);
             }
             tv_songName.setText(currentSongName);
             songAssigned=true;
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
             byte[] art = metadataRetriever.getEmbeddedPicture();
             Bitmap songImage = BitmapFactory.decodeByteArray(art,0,art.length);
             circularImageView.setImageBitmap(songImage);
-            notification_thumb.setImageBitmap(songImage);
+            //notification_thumb.setImageBitmap(songImage);
             ///////////////////////////////////////////////////////
             dominantColor = songImage.getPixel(0,0);
             int[] colors = new int[3];
@@ -258,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("thumbnail","fail");
             //thumbnail.setImageResource(R.drawable.nothumb);
             circularImageView.setImageResource(R.drawable.nothumb);
-            notification_thumb.setImageResource(R.drawable.nothumb);
+            //notification_thumb.setImageResource(R.drawable.nothumb);
         }
         // set visualizer
         int audioSessionId = mp.getAudioSessionId();
@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
             currentSongIndex = songsInPlaylist.indexOf(songName);
             playSong(currentSongIndex);
             playBT.setImageResource(R.drawable.ic_pause_circle);
-            notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+            //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
         }
         else if(resultCode == MainActivity.playlistLikedSongsReqCode){
             String tableName = data.getStringExtra("tablename");
@@ -318,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
             currentSongIndex = songsInPlaylist.indexOf(songName);
             playSong(currentSongIndex);
             playBT.setImageResource(R.drawable.ic_pause_circle);
-            notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+            //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
 
         }
         else if(resultCode==3){
@@ -340,7 +340,7 @@ public class MainActivity extends AppCompatActivity {
             currentSongIndex = songsInPlaylist.indexOf(songName);
             playSong(currentSongIndex);
             playBT.setImageResource(R.drawable.ic_pause_circle);
-            notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+            //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
 
         }
         else if(requestCode== sd_card_directory_reqCode){
@@ -409,42 +409,42 @@ public class MainActivity extends AppCompatActivity {
         repeat = findViewById(R.id.mainactivity_repeat_IB);
         visualizer = findViewById(R.id.visualiser);
 
-        View view = LayoutInflater.from(this).inflate(R.layout.notification_layout,null);
-        notification_seekbar = view.findViewById(R.id.notification_seekbar);
-        notification_playpause = view.findViewById(R.id.notification_playpause_BT);
-        notification_previous = view.findViewById(R.id.notification_previous_BT);
-        notification_next = view.findViewById(R.id.notification_next_BT);
-        notification_liked = view.findViewById(R.id.notification_liked_BT);
-        notification_currenttime = view.findViewById(R.id.notification_currenttime_TV);
-        notification_fulltime = view.findViewById(R.id.notification_fulltime_TV);
-        notification_songname = view.findViewById(R.id.notification_songname_TV);
-        notification_thumb = view.findViewById(R.id.notification_thumb_IV);
-        notification_thumb.setImageResource(R.drawable.nothumb);
-        // in play and mp.play also
-        notification_playpause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playBT.performClick();
-            }
-        });
-        notification_previous.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                previousBT.performClick();
-            }
-        });
-        notification_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nextBT.performClick();
-            }
-        });
-        notification_liked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                likedBT.performClick();
-            }
-        });
+//        View view = LayoutInflater.from(this).inflate(R.layout.notification_layout,null);
+//        notification_seekbar = view.findViewById(R.id.notification_seekbar);
+//        notification_playpause = view.findViewById(R.id.notification_playpause_BT);
+//        notification_previous = view.findViewById(R.id.notification_previous_BT);
+//        notification_next = view.findViewById(R.id.notification_next_BT);
+//        notification_liked = view.findViewById(R.id.notification_liked_BT);
+//        notification_currenttime = view.findViewById(R.id.notification_currenttime_TV);
+//        notification_fulltime = view.findViewById(R.id.notification_fulltime_TV);
+//        notification_songname = view.findViewById(R.id.notification_songname_TV);
+//        notification_thumb = view.findViewById(R.id.notification_thumb_IV);
+//        notification_thumb.setImageResource(R.drawable.nothumb);
+//        // in play and mp.play also
+//        notification_playpause.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                playBT.performClick();
+//            }
+//        });
+//        notification_previous.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                previousBT.performClick();
+//            }
+//        });
+//        notification_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                nextBT.performClick();
+//            }
+//        });
+//        notification_liked.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                likedBT.performClick();
+//            }
+//        });
 
 
 
@@ -637,12 +637,12 @@ public class MainActivity extends AppCompatActivity {
                     mp.pause();
 //                    mStateBuilder.setState(PlaybackStateCompat.STATE_PAUSED, mp.getCurrentPosition(), 1f);
                     playBT.setImageResource(R.drawable.ic_play_circle);
-                    notification_playpause.setImageResource(android.R.drawable.ic_media_play);
+                    //notification_playpause.setImageResource(android.R.drawable.ic_media_play);
                 }
                 else if(songAssigned && hasFocus){
                     mp.start();
                     playBT.setImageResource(R.drawable.ic_pause_circle);
-                    notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+                    //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
                 }
                 else if(!songAssigned){
                     Toast.makeText(MainActivity.this, "Select song from list", Toast.LENGTH_SHORT).show();
@@ -669,21 +669,21 @@ public class MainActivity extends AppCompatActivity {
                             currentSongIndex++;
                             playSong(currentSongIndex);
                             playBT.setImageResource(R.drawable.ic_pause_circle);
-                            notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+                            //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
                         }
                     }
                     else if(repeatState==1){
                         currentSongIndex= (currentSongIndex+1)%songsInPlaylist.size();
                         playSong(currentSongIndex);
                         playBT.setImageResource(R.drawable.ic_pause_circle);
-                        notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+                        //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
 
                     }
                     else{
                         // repeat one song
                         playSong(currentSongIndex);
                         playBT.setImageResource(R.drawable.ic_pause_circle);
-                        notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+                        //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
 
                     }
                 }
@@ -701,7 +701,7 @@ public class MainActivity extends AppCompatActivity {
                         currentSongIndex--;
                         playSong(currentSongIndex);
                         playBT.setImageResource(R.drawable.ic_pause_circle);
-                        notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
+                        //notification_playpause.setImageResource(android.R.drawable.ic_media_pause);
                     }
                 } else {
                     mp.seekTo(0);
@@ -723,13 +723,13 @@ public class MainActivity extends AppCompatActivity {
                     // dislike it
                     dbh.removeFromLiked(currentSongName);
                     likedBT.setImageResource(R.drawable.ic_not_liked);
-                    notification_liked.setImageResource(R.drawable.ic_not_liked);
+                    //notification_liked.setImageResource(R.drawable.ic_not_liked);
                 }
                 else{
                     // like it
                     dbh.addToLiked(currentSongName);
                     likedBT.setImageResource(R.drawable.ic_liked);
-                    notification_liked.setImageResource(R.drawable.ic_liked);
+                    //notification_liked.setImageResource(R.drawable.ic_liked);
                 }
                 dbh.close();
             }
